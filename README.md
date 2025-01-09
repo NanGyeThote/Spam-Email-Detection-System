@@ -272,7 +272,7 @@ As artificial intelligence (AI) technologies such as spam detection systems beco
 
 - **Streamlit App**: [View the live Spam Detection App](https://spam-email-detection-system-hmblxbynzyasus5l6w8yex.streamlit.app/)  
   
-- **YouTube Video**: [Watch the Project Walkthrough](http://your-youtube-video-url)  
+- **YouTube Video**: [Watch the Project Walkthrough](https://youtu.be/IDBK5_4xNyo)  
 
 ---
 
