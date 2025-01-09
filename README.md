@@ -74,7 +74,11 @@ To run this project locally, follow these steps:
     - **File Upload Button**: Upload a `.txt` file to classify its contents.
 
 ### Space for Additional Screenshot (Optional):
+1. Home
 ![Model Prediction](images/img1.png)  <!-- Replace with actual model prediction image -->
+2. Batch
+![Model Prediction](images/img2.png) 
+
 
 ## How It Works
 
