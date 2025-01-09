@@ -1,7 +1,7 @@
 # 📥 Spam Detection AI Streamlit Application
 
 **Prepared by**: Shin Thant Phyo  
-**Institution**: -  
+**Institution**: Student
 **Date**: January 2025
 
 ## Project Overview
@@ -242,10 +242,8 @@ As artificial intelligence (AI) technologies such as spam detection systems beco
 ## Project Links
 
 - **Streamlit App**: [View the live Spam Detection App](http://your-streamlit-app-url)  
-  (Replace this with the actual URL where your app is hosted on Streamlit)
   
 - **YouTube Video**: [Watch the Project Walkthrough](http://your-youtube-video-url)  
-  (Replace this with the actual link to your YouTube video)
 
 ---
 
