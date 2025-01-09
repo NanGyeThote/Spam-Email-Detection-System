@@ -67,11 +67,41 @@ X_train, X_test, y_train, y_test = train_test_split(X_tfidf, y, test_size=0.2, r
 
 The following libraries were used to implement this project:
 
-- **Streamlit**: For creating the interactive web interface.
-- **scikit-learn**: For building the machine learning models (Random Forest, SVM).
-- **pandas**: For data manipulation and processing.
-- **numpy**: For numerical operations.
-- **pickle**: For serializing and deserializing the trained model.
+### 1. **Streamlit**
+- **Purpose**: Used for creating the interactive web interface, where users can input messages and view spam detection results.
+- **Installation**: `pip install streamlit`
+
+### 2. **scikit-learn**
+- **Purpose**: Used for building the machine learning models (Random Forest, SVM) and performing tasks like vectorization (TfidfVectorizer) and model evaluation.
+- **Installation**: `pip install scikit-learn`
+
+### 3. **pandas**
+- **Purpose**: Used for data manipulation and processing, especially for reading and working with datasets (e.g., CSV files).
+- **Installation**: `pip install pandas`
+
+### 4. **numpy**
+- **Purpose**: Used for numerical operations such as handling arrays and matrices.
+- **Installation**: `pip install numpy`
+
+### 5. **pickle**
+- **Purpose**: Used for serializing and deserializing the trained models to/from disk.
+- **Installation**: It is included with Python, so no need to install it separately.
+
+### 6. **requests**
+- **Purpose**: Used for making HTTP requests, for example, if your system needs to interact with APIs or external services (if applicable in your project).
+- **Installation**: `pip install requests`
+
+### 7. **streamlit-lottie**
+- **Purpose**: Used to add Lottie animations to the Streamlit app for a more engaging user interface.
+- **Installation**: `pip install streamlit-lottie`
+
+### 8. **streamlit-option-menu**
+- **Purpose**: Used to create a stylish horizontal menu for navigating different sections of the Streamlit app.
+- **Installation**: `pip install streamlit-option-menu`
+
+---
+
+Each of these libraries plays an essential role in building the spam detection system, from the backend machine learning models to the frontend user interface.
 
 ## How to Run the Project
 
