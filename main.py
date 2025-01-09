@@ -276,7 +276,7 @@ elif selected2 == "About":
     # Credits
     st.subheader("👨‍💻 Developer Information")
     st.write("""
-    Developed by **Shin Thant Phyo**, a 3rd-year Computer Science student specializing in AI, Web Development, and Software Engineering. 
+    Developed by **Shin Thant Phyo**, a Computer Science student specializing in AI, Web Development, and Software Engineering. 
     For inquiries, feel free to reach out!
     """)
 
