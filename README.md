@@ -109,7 +109,14 @@ The system uses the **SMS Spam Collection Dataset** to train a machine learning 
     - Once trained, the model can classify unseen messages as spam or ham.
 
 ### Model Architecture Diagram:
-![Model Architecture](images/model-architecture.png)  <!-- Replace with actual model architecture diagram -->
+1. **Random Forest**
+![Model Architecture](images/rfr.jpg)  <!-- Replace with actual model architecture diagram -->
+
+2. **Logistic Regression**
+![Model Architecture](images/lrg.png)  <!-- Replace with actual model architecture diagram -->
+
+3. **SVM**
+![Model Architecture](images/svm.jpg)  <!-- Replace with actual model architecture diagram -->
 
 ## Evaluation Metrics
 
