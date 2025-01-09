@@ -33,8 +33,22 @@ The **SMS Spam Collection Dataset** was used for training the machine learning m
 
 This dataset is highly suitable for spam detection because it contains a diverse set of messages in English.
 
-### Space for Dataset Statistics (Optional):
-![Dataset Distribution](images/dataset-distribution.png)  <!-- Replace with actual dataset distribution chart -->
+### Dataset Statistics:
+```bash
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+
+# Features and labels
+X = data['message']
+y = data['label']
+
+# Text to numeric vectors using TF-IDF
+tfidf = TfidfVectorizer(stop_words='english', max_features=3000)
+X_tfidf = tfidf.fit_transform(X)
+
+# Split into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X_tfidf, y, test_size=0.2, random_state=42)
+```
 
 ## Libraries Used
 
