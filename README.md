@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project is a **Spam Detection AI** application built with **Streamlit**. It is designed to classify text messages as either **spam** or **not spam (ham)**. The system leverages machine learning models to predict the category of the input message, using algorithms such as **Random Forest** and **Support Vector Machine (SVM)**.
+This project is a **Spam Detection AI** application built with **Streamlit**. It is designed to classify text messages as either **spam** or **not spam (ham)**. The system leverages machine learning models to predict the category of the input message, using algorithms such as **Random Forest**, **Logistic Regression** and **Support Vector Machine (SVM)**.
 
 The web application allows users to:
 - Input messages directly to be classified.
