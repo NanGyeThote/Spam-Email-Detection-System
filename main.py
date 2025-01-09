@@ -50,13 +50,15 @@ if "tfidf_vectorizer" not in st.session_state:
 # Function to load the real or mock model
 def load_model_and_vectorizer(model_name):
     try:
-        if model_name == "Model 1":
+        if model_name == "Random Forest":
             model = joblib.load("model/spam_modelf.joblib")
             tfidf = joblib.load("model/tfidf_vectorizerf.joblib")
-        else:
-            # Mock models for Model 2 and Model 3
-            model = lambda x: [1] if "spam" in x[0].lower() else [0]  # Mock spam detection
-            tfidf = lambda x: np.array(x)  # Mock vectorizer (does nothing)
+        elif model_name == "Logistic Regression":
+            model = joblib.load("model/logistic_regression_model.joblib")
+            tfidf = joblib.load("model/log_ver.joblib")
+        elif model_name == "SVM":
+            model = joblib.load("model/svm_model.joblib")
+            tfidf = joblib.load("model/svm_ver.joblib")
 
         st.session_state.current_model = model
         st.session_state.tfidf_vectorizer = tfidf
@@ -79,7 +81,7 @@ if selected2 == "Home":
     st.title("📧 Spam Detection System")
 
     # Model selection dropdown
-    model_option = st.selectbox("Select Model", ("Model 1", "Model 2", "Model 3"))
+    model_option = st.selectbox("Select Model", ("Random Forest", "Logistic Regression", "SVM"))
 
     # Load the selected model dynamically
     if st.button("Load Model", key="load_model_button"):
@@ -107,21 +109,16 @@ if selected2 == "Home":
         if message.strip():
             if st.session_state.current_model and st.session_state.tfidf_vectorizer:
                 try:
-                    # Mock and real model behavior
-                    if model_option == "Model 1":
-                        input_tfidf = st.session_state.tfidf_vectorizer.transform([message])
-                        prediction = st.session_state.current_model.predict(input_tfidf)[0]
-                    else:
-                        # Use mock model for Model 2 and Model 3
-                        input_mock = [message]  # Mock input for the model
-                        prediction = st.session_state.current_model(input_mock)[0]
+                    # Models
+                    input_tfidf = st.session_state.tfidf_vectorizer.transform([message])
+                    prediction = st.session_state.current_model.predict(input_tfidf)[0]
 
                     # Interpret result
                     result = "Spam" if prediction == 1 else "Not Spam"
                     st.session_state.result = result
 
                     # Clear the message in session state (this clears the input field)
-                    st.session_state.message = ""  # This will reset the text area input
+                    st.session_state.message = ""
                 except Exception as e:
                     st.error(f"Error during classification: {e}")
             else:
@@ -144,21 +141,22 @@ elif selected2 == "Upload":
     st.markdown("### 📂 Batch Spam Detection")
     
     # Allow the user to select the model they want to use
-    model_option = st.selectbox("Select Model", ("Model 1", "Model 2", "Model 3"))
+    model_option = st.selectbox("Select Model", ("Random Forest", "Logistic Regression", "SVM"))
     
     # Load the selected model dynamically when the button is pressed
     if st.button("Load Model"):
         try:
-            if model_option == "Model 1":
+            if model_option == "Random Forest":
                 model = joblib.load("model/spam_modelf.joblib")
-                tfidf = joblib.load("model/tfidf_vectorizerf.joblib")
-            elif model_option == "Model 2":
-                model = joblib.load("model/spam_model2.joblib")
-                tfidf = joblib.load("model/tfidf_vectorizer2.joblib")
-            else:
-                model = joblib.load("model/spam_model3.joblib")
-                tfidf = joblib.load("model/tfidf_vectorizer3.joblib")
+                tfidf = joblib.load("model/tfidf_vectorizerf.joblib")  # Use the correct vectorizer for Random Forest
+            elif model_option == "Logistic Regression":
+                model = joblib.load("model/logistic_regression_model.joblib")
+                tfidf = joblib.load("model/log_ver.joblib")  # Ensure you load the correct vectorizer
+            else:  # SVM model
+                model = joblib.load("model/svm_model.joblib")
+                tfidf = joblib.load("model/svm_ver.joblib")  # Use the correct vectorizer for SVM
 
+            # Store model and vectorizer in session state
             st.session_state.current_model = model
             st.session_state.tfidf_vectorizer = tfidf
             st.success(f"{model_option} loaded successfully!")
@@ -191,6 +189,7 @@ elif selected2 == "Upload":
                             df.columns = ['Message']  # Assuming the first column is the message column
 
                         st.write("**Processing CSV file...**")
+                        # Apply the correct TF-IDF vectorizer to the messages
                         predictions = model.predict(tfidf.transform(df['Message']))  
                         spam_count = predictions.sum()
                         total_messages = len(df)
@@ -216,6 +215,7 @@ elif selected2 == "Upload":
                         st.warning("⚠️ The TXT file is empty.")
                     else:
                         st.write("**Processing TXT file...**")
+                        # Apply the correct TF-IDF vectorizer to the messages
                         predictions = model.predict(tfidf.transform(df['Message']))  
                         spam_count = predictions.sum()
                         total_messages = len(df)
@@ -237,6 +237,7 @@ elif selected2 == "Upload":
 
             except Exception as e:
                 st.error(f"Error reading or processing the file: {e}")
+
 
 # ================== About Page ==================
 
@@ -284,12 +285,55 @@ elif selected2 == "About":
 elif selected2 == "Settings":
     st.markdown("### ⚙️ App Information and Preferences")
     st.write("View app details or reset your preferences.")
+    
     st.subheader("ℹ️ Application Details")
     st.write("""
         - **Version**: 1.0.0  
         - **Developer**: Shin Thant Phyo  
         - **Last Updated**: January 2025
     """)
+
+    # Model Information
+    st.subheader("💡 Available Models and Parameters")
+    st.write("""
+        This app provides 3 machine learning models for spam detection:
+        - **Random Forest**: A robust ensemble model for classification tasks.
+        - **Logistic Regression**: A statistical model that works well for binary classification.
+        - **SVM (Support Vector Machine)**: A powerful classifier that works well in high-dimensional spaces.
+
+        You can adjust the following fake parameters for each model:
+    """)
+
+    # Model selection
+    model_selected = st.selectbox("Select a model to adjust parameters", 
+                                  ["Random Forest", "Logistic Regression", "SVM"], 
+                                  key="model_select_box")
+
+    # Model 1 (Random Forest) Parameters
+    if model_selected == "Random Forest":
+        st.subheader("Random Forest Model Parameters")
+        n_estimators = st.slider("Number of Estimators", 50, 200, 100, key="n_estimators")
+        max_depth = st.slider("Max Depth", 3, 20, 10, key="max_depth")
+        min_samples_split = st.slider("Min Samples Split", 2, 10, 5, key="min_samples_split")
+        st.write(f"Random Forest configured with: n_estimators={n_estimators}, max_depth={max_depth}, min_samples_split={min_samples_split}")
+
+    # Model 2 (Logistic Regression) Parameters
+    elif model_selected == "Logistic Regression":
+        st.subheader("Logistic Regression Model Parameters")
+        penalty = st.selectbox("Penalty", ["l2", "l1", "none"], index=0, key="penalty")
+        solver = st.selectbox("Solver", ["lbfgs", "liblinear", "saga"], index=0, key="solver")
+        C = st.slider("Regularization Strength (C)", 0.01, 10.0, 1.0, key="C")
+        st.write(f"Logistic Regression configured with: penalty={penalty}, solver={solver}, C={C}")
+
+    # Model 3 (SVM) Parameters
+    elif model_selected == "SVM":
+        st.subheader("SVM Model Parameters")
+        kernel = st.selectbox("Kernel", ["linear", "poly", "rbf", "sigmoid"], index=2, key="kernel")
+        C = st.slider("Regularization Parameter (C)", 0.1, 10.0, 1.0, key="svm_C")
+        gamma = st.selectbox("Gamma", ["scale", "auto", 0.1, 0.5, 1.0], index=0, key="gamma")
+        st.write(f"SVM configured with: kernel={kernel}, C={C}, gamma={gamma}")
+
+    # Reset settings button
     if st.button("Reset to Default Settings"):
         st.session_state.clear()
         st.success("All settings have been reset to default!")
