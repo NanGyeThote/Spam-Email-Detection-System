@@ -1,4 +1,4 @@
-# Spam Detection AI Streamlit Application
+# 📥 Spam Detection AI Streamlit Application
 
 **Prepared by**: Shin Thant Phyo  
 **Institution**: -  
@@ -222,6 +222,16 @@ As artificial intelligence (AI) technologies such as spam detection systems beco
 - **Transparency and Accountability**: Users should be able to understand how AI systems classify messages as spam or not. This project aims to provide clarity on model behavior through detailed results and explanations.
 
 - **Continuous Monitoring and Improvement**: Spam tactics evolve over time, and AI models should be continuously updated to adapt to new patterns. The future improvement of this project includes regular updates to the model to handle evolving spam tactics.
+
+---
+
+## Project Links
+
+- **Streamlit App**: [View the live Spam Detection App](http://your-streamlit-app-url)  
+  (Replace this with the actual URL where your app is hosted on Streamlit)
+  
+- **YouTube Video**: [Watch the Project Walkthrough](http://your-youtube-video-url)  
+  (Replace this with the actual link to your YouTube video)
 
 ---
 
