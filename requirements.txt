@@ -1,0 +1,7 @@
+streamlit
+requests
+streamlit-lottie
+streamlit-option-menu
+joblib
+pandas
+numpy
