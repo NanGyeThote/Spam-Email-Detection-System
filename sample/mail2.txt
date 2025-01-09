@@ -1,0 +1,13 @@
+Dear [Name],
+
+Thank you for signing up for Streamlit! We’re excited to have you on board and help you build amazing data apps.
+
+Here’s how you can get started:
+
+Explore the Documentation: Visit our documentation for detailed guides and examples.
+Join the Community: Connect with other developers and get support on our community forum.
+Try the Demos: Check out some pre-built demos to get inspired here.
+If you have any questions, feel free to reply to this email or reach out to our support team at support@streamlit.io.
+
+Happy coding,
+The Streamlit Team
