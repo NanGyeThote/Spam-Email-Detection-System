@@ -1,4 +1,4 @@
-# 📥 Spam Detection AI Streamlit Application
+# 📥 Spam Detection AI Streamlit Application (NLP Based)
 
 **Prepared by**: Shin Thant Phyo  
 **Date**: 9th January 2025
