@@ -73,7 +73,7 @@ To run this project locally, follow these steps:
     - **Text Input Box**: Type or paste a message to be classified as spam or ham.
     - **File Upload Button**: Upload a `.txt` file to classify its contents.
 
-### Space for Additional Screenshot (Optional):
+### Additional Screenshot:
 1. **Home**
 ![Model Prediction](images/img1.png)  <!-- Replace with actual model prediction image -->
 2. **Batch**
@@ -94,7 +94,7 @@ The system uses the **SMS Spam Collection Dataset** to train a machine learning 
 3. **Prediction**: 
     - Once trained, the model can classify unseen messages as spam or ham.
 
-### Space for Model Architecture Diagram (Optional):
+### Model Architecture Diagram:
 ![Model Architecture](images/model-architecture.png)  <!-- Replace with actual model architecture diagram -->
 
 ## Evaluation Metrics
@@ -106,8 +106,8 @@ The following metrics were used to evaluate the model performance:
 - **Recall**: The percentage of actual spam messages that were correctly detected.
 - **F1-Score**: The harmonic mean of precision and recall.
 
-### Space for Graph (Optional):
-![Model Evaluation Graph](images/model-evaluation-graph.png)  <!-- Replace with actual evaluation graph -->
+### Model Evaluation Graph:
+![Model Evaluation Graph](images/eva.png)  <!-- Replace with actual evaluation graph -->
 
 ## Example Usage
 
