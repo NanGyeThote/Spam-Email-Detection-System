@@ -19,8 +19,8 @@ The web application allows users to:
 - **File Upload**: Users can upload `.txt` files, and the application will classify the message inside the file as spam or ham.
 - **Real-Time Prediction**: The application processes the input in real-time and displays the result instantly.
 
-### Space for Application Screenshot:
-![Application Screenshot](images/spam-detection-app.png) <!-- Replace with actual screenshot path -->
+### Application Screenshot:
+![Application Screenshot](images/img3.png) <!-- Replace with actual screenshot path -->
 
 ## Dataset
 
