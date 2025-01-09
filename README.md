@@ -1,7 +1,7 @@
 # Spam Detection AI Streamlit Application
 
 **Prepared by**: Shin Thant Phyo  
-**Institution**: University of Information Technology, Yangon  
+**Institution**: -  
 **Date**: January 2025
 
 ## Project Overview
