@@ -74,9 +74,9 @@ To run this project locally, follow these steps:
     - **File Upload Button**: Upload a `.txt` file to classify its contents.
 
 ### Space for Additional Screenshot (Optional):
-1. Home
+1. **Home**
 ![Model Prediction](images/img1.png)  <!-- Replace with actual model prediction image -->
-2. Batch
+2. **Batch**
 ![Model Prediction](images/img2.png) 
 
 
@@ -89,7 +89,7 @@ The system uses the **SMS Spam Collection Dataset** to train a machine learning 
     - Vectorization: Converting text into numerical form using `TfidfVectorizer`.
 
 2. **Model Training**: 
-    - The model is trained using algorithms like **Random Forest** or **Support Vector Machine (SVM)**.
+    - The model is trained using algorithms like **Random Forest**,**Logistic Regression** or **Support Vector Machine (SVM)**.
 
 3. **Prediction**: 
     - Once trained, the model can classify unseen messages as spam or ham.
