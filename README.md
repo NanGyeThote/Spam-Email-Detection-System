@@ -24,14 +24,28 @@ The web application allows users to:
 
 ## Dataset
 
-The **SMS Spam Collection Dataset** was used for training the machine learning models.
-
+### 1. **SMS Spam Collection Dataset**
 - **Source**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection)
 - **Description**: A collection of 5,574 labeled SMS messages, with categories "ham" (non-spam) and "spam."
-- **Spam Messages**: 747
-- **Ham Messages**: 4,827
+  - **Spam Messages**: 747
+  - **Ham Messages**: 4,827
+- **Purpose**: This dataset is highly suitable for spam detection because it contains a diverse set of messages in English. It was used to train the machine learning models in this project.
 
-This dataset is highly suitable for spam detection because it contains a diverse set of messages in English.
+### 2. **Spam Text Message Classification Dataset**
+- **Source**: [Kaggle - Spam Text Message Classification Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
+- **Description**: Contains 5,572 SMS messages, formatted for easy integration with Kaggle competitions. Similar to the SMS Spam Collection Dataset, it is labeled with "ham" and "spam" categories.
+  - **Spam Messages**: 747
+  - **Ham Messages**: 4,825
+- **Purpose**: This dataset was explored for additional testing and model validation but wasn't used for training in the final project.
+
+### 3. **Enron Email Dataset**
+- **Source**: [Kaggle - Enron Email Dataset](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset)
+- **Description**: A collection of emails from the Enron Corporation, which can be used for various Natural Language Processing (NLP) tasks, including spam detection.
+  - **Spam Messages**: Variable based on selection and preprocessing.
+  - **Ham Messages**: Variable based on selection and preprocessing.
+- **Purpose**: This dataset was considered for future work on email-based spam classification systems. It includes both personal and business emails, providing a larger, more complex corpus than typical SMS datasets.
+
+---
 
 ### Dataset Statistics:
 ```bash
